@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+	echo "Usage: $0 <dirname>"
+	exit 1
+fi
+
+DIR="$1"
+mkdir -p "$DIR"
+
+for sub in {A..G}; do
+	SUBDIR="$DIR/$sub"
+	mkdir -p "$SUBDIR"
+	touch "$SUBDIR/input.txt" "$SUBDIR/output.txt"
+	cat <<EOF > "$SUBDIR/main.cpp"
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+}
+EOF
+done
