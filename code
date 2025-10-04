@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$#" == 0 ] ; then
+    open -a "/Applications/Visual Studio Code.app" ./
+else
+    open -a "/Applications/Visual Studio Code.app" "$1"
+fi
+exit
