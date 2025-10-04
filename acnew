@@ -8,6 +8,16 @@ fi
 DIR="$1"
 mkdir -p "$DIR"
 
+# Create .vscode directory and settings.json to disable Copilot
+mkdir -p "$DIR/.vscode"
+cat <<EOF > "$DIR/.vscode/settings.json"
+{
+    "github.copilot.enable": {
+        "*": false
+    }
+}
+EOF
+
 for sub in {A..G}; do
 	SUBDIR="$DIR/$sub"
 	mkdir -p "$SUBDIR"
