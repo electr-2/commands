@@ -1,5 +1,6 @@
 #!/bin/bash
 
-g++ "main.cpp"
+g++ -std=c++17 -O2 -I ../../ac-library -I ../../include main.cpp -o a.out
+
 
 ./a.out < "input.txt" > "output.txt"
